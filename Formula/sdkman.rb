@@ -1,4 +1,4 @@
-class Sdkman < Formula
+class SdkMan < Formula
   desc "The SDKMAN! Command Line Interface"
   homepage "https://sdkman.io"
   url "https://github.com/sdkman/sdkman-cli/releases/download/5.13.1/sdkman-cli-5.13.1.zip"
@@ -7,6 +7,10 @@ class Sdkman < Formula
 
   def install
     libexec.install Dir["*"]
+  end
+
+  def caveats
+
   end
 
   test do
