@@ -1,4 +1,4 @@
-class SdkMan < Formula
+class Sdkman < Formula
   desc "The SDKMAN! Command Line Interface"
   homepage "https://sdkman.io"
   url "https://github.com/sdkman/sdkman-cli/releases/download/5.13.1/sdkman-cli-5.13.1.zip"
