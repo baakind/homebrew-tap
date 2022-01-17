@@ -7,10 +7,17 @@ class Sdkman < Formula
 
   def install
     libexec.install Dir["*"]
+    
+    ['ext', 'etc', 'var'].each { |dir| mkdir libexec/dir } 
   end
 
   def caveats
+    <<~EOS
+    Add the following snippet to your .bash_profile
 
+    export SDKMAN_DIR=$(brew --prefix sdkman)/libexec
+    [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+    EOS
   end
 
   test do
