@@ -7,8 +7,10 @@ class Sdkman < Formula
 
   def install
     libexec.install Dir["*"]
-    
-    ['ext', 'etc', 'var'].each { |dir| mkdir libexec/dir } 
+
+    ["ext", "etc", "candidates"].each { |dir| mkdir_p libexec/dir }
+
+    system "curl", "-s", "https://api.sdkman.io/2/candidates/all", ">", libexec/"var/candidates" 
   end
 
   def caveats
@@ -21,6 +23,6 @@ class Sdkman < Formula
   end
 
   test do
-    
+
   end
 end
